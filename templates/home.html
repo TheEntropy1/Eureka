@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eureka</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Eureka</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Search for movies, series or anime..." required>
+                <button type="submit">Search</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>A Prakhar Solanki Production | <a href="https://instagram.com/prakhar.5898" target="_blank">Follow me on Instagram @prakhar.5898</a></p>
+        </footer>
+    </div>
+</body>
+</html>

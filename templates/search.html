@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Eureka</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Eureka</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Results for "{{ query }}"</h2>
+            <div class="results">
+                {% for result in results %}
+                <div class="result-item">
+                    <img src="https://image.tmdb.org/t/p/w200/{{ result.poster_path }}" alt="{{ result.title }}">
+                    <h3>{{ result.title }}</h3>
+                    <p>{{ result.release_date[:4] }}</p>
+                    <a href="/watch/{{ result.id }}?category={{ category }}">Watch Now</a>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer>
+            <p>A Prakhar Solanki Production | <a href="https://instagram.com/prakhar.5898" target="_blank">Follow me on Instagram @prakhar.5898</a></p>
+        </footer>
+    </div>
+</body>
+</html>
